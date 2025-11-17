@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import Icon from '@/components/ui/icon';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import Icon from "@/components/ui/icon";
 
 interface HeaderProps {
   isLoggedIn: boolean;
@@ -23,7 +23,7 @@ const Header = ({
   showPassword,
   setShowPassword,
   handleLogin,
-  setIsLoggedIn
+  setIsLoggedIn,
 }: HeaderProps) => {
   return (
     <header className="bg-white/80 backdrop-blur-md border-b border-purple-100 sticky top-0 z-50">
@@ -45,7 +45,7 @@ const Header = ({
               />
               <div className="relative">
                 <Input
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   placeholder="Пароль"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -55,10 +55,10 @@ const Header = ({
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-purple-600 transition-colors"
                 >
-                  <Icon name={showPassword ? 'EyeOff' : 'Eye'} size={16} />
+                  <Icon name={showPassword ? "Eye" : "EyeOff"} size={16} />
                 </button>
               </div>
-              <Button 
+              <Button
                 onClick={handleLogin}
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white h-9 transition-all duration-300 hover:scale-105"
               >
@@ -68,7 +68,7 @@ const Header = ({
           ) : (
             <div className="flex items-center gap-3 animate-fade-in">
               <span className="text-gray-600">Привет, {login}!</span>
-              <Button 
+              <Button
                 variant="outline"
                 onClick={() => setIsLoggedIn(false)}
                 className="border-purple-200 hover:border-purple-400 hover:bg-purple-50"
